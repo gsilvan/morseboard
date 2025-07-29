@@ -11,11 +11,11 @@
     --button-active-bg-color: #c9c9c9;
     --button-border-color: #ccc;
     --button-text-color: #333;
-    --play-button-bg-color: #28a745;
-    --play-button-hover-bg-color: #218838;
+    --play-button-bg-color: #1a7431; /* MODIFIED for contrast */
+    --play-button-hover-bg-color: #155d27; /* MODIFIED for contrast */
     --play-button-disabled-bg-color: #cccccc;
     --play-button-text-color: #ffffff;
-    --slider-value-color: #007bff;
+    --slider-value-color: #0056b3; /* MODIFIED for contrast */
     --input-bg-color: #ffffff;
     --input-border-color: #ccc;
     --input-text-color: #333;
@@ -35,10 +35,10 @@
         --button-active-bg-color: #6a6a6a;
         --button-border-color: #555;
         --button-text-color: #e0e0e0;
-        --play-button-bg-color: #34a853;
-        --play-button-hover-bg-color: #2c8a4a;
+        --play-button-bg-color: #2a9134; /* MODIFIED for contrast */
+        --play-button-hover-bg-color: #2a7e2f; /* MODIFIED for contrast */
         --play-button-disabled-bg-color: #555555;
-        --slider-value-color: #4dabf7;
+        --slider-value-color: #61baff; /* MODIFIED for contrast */
         --input-bg-color: #3a3a3a;
         --input-border-color: #555;
         --input-text-color: #e0e0e0;
