@@ -242,3 +242,26 @@ em {
     background-color: var(--button-active-bg-color);
     transform: scale(0.95);
 }
+
+/* Responsive Fix for Mobile */
+@media (max-width: 480px) {
+    .setting {
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+
+    .setting label[for="speed-slider"],
+    .setting label[for="frequency-slider"] {
+        width: 100%;
+        min-width: 0;
+        text-align: left;
+    }
+
+    .setting input[type="range"] {
+        flex-grow: 1;
+    }
+
+    .setting span {
+        min-width: 65px;
+    }
+}
