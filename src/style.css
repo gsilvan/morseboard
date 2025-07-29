@@ -95,7 +95,8 @@ em {
 .settings-container,
 .text-input-container,
 .translation-container,
-.button-container {
+.button-container,
+.alphabet-list-container {
     background-color: var(--container-bg-color);
     padding: 20px 25px;
     border-radius: 8px;
@@ -112,7 +113,8 @@ em {
 .settings-container h2,
 .text-input-container h2,
 .translation-container h2,
-.button-container h2 {
+.button-container h2,
+.alphabet-list-container h2 {
     text-align: center;
     margin-top: 0;
     margin-bottom: 20px;
@@ -243,6 +245,37 @@ em {
     transform: scale(0.95);
 }
 
+/* Morse Alphabet Definition List */
+.dl-grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 20px;
+}
+
+.alphabet-list-container dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 16px;
+    text-align: left;
+}
+
+.alphabet-list-container dt {
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1.2em;
+    grid-column: 1;
+}
+
+.alphabet-list-container dd {
+    grid-column: 2;
+    margin: 0;
+    font-family: monospace;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    align-self: center;
+}
+
+
 /* Responsive Fix for Mobile */
 @media (max-width: 480px) {
     .setting {
@@ -263,5 +296,9 @@ em {
 
     .setting span {
         min-width: 65px;
+    }
+
+    .dl-grid-wrapper {
+        grid-template-columns: repeat(2, 1fr); /* Use 2 columns on small mobile */
     }
 }
