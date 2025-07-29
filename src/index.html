@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Morse Code Translator | Convert Text to Morse & Play Audio</title>
+    <meta name="description" content="A free online Morse code translator that converts any text to Morse code and lets you play the audio. Adjust speed (WPM) and tone frequency for practice.">
+
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f4f4">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
-    <title>Morse Code Player</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="header-container">
-    <h1>Morse Code Player</h1>
+    <h1>Morse Code Translator</h1>
     <div class="theme-switch-wrapper">
         <label class="theme-switch" for="dark-mode-toggle">
             <input type="checkbox" id="dark-mode-toggle" />
@@ -20,6 +23,8 @@
         <em>Dark Mode</em>
     </div>
 </div>
+
+<p class="intro">Easily convert your text into Morse code, see the translation in real-time, and listen to the audio. Perfect for learning and practice!  Morse code is a method used in telecommunication to encode text characters as standardized sequences of two different signal durations, called dots and dashes (or dits and dahs).</p>
 
 <p>Enter text below or click individual characters.</p>
 <p><em>Note: Audio requires user interaction. Click any button/Play once to enable sound.</em></p>
@@ -48,6 +53,7 @@
     <h2>Translation</h2>
     <textarea id="morse-output" rows="3" readonly placeholder="Morse code will appear here..."></textarea>
 </div>
+
 <div id="button-container" class="button-container">
     <h2>Individual Characters</h2>
 </div>

@@ -89,11 +89,20 @@ em {
     color: var(--secondary-text-color); /* Style emphasis text */
 }
 
+/* ++ ADDED ++ */
+.intro {
+    max-width: 600px;
+    margin: 20px auto 30px auto;
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
 
 /* Settings Styles */
 .settings-container,
 .text-input-container,
-.translation-container, /* ++ ADDED ++ */
+.translation-container,
 .button-container {
     background-color: var(--container-bg-color);
     padding: 20px 25px;
@@ -111,7 +120,7 @@ em {
 
 .settings-container h2,
 .text-input-container h2,
-.translation-container h2, /* ++ ADDED ++ */
+.translation-container h2,
 .button-container h2 {
     text-align: center;
     margin-top: 0;
@@ -162,7 +171,6 @@ em {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-/* ++ ADDED SECTION START ++ */
 #morse-output {
     width: 95%;
     padding: 10px;
@@ -180,7 +188,6 @@ em {
     resize: none; /* Disable user resizing */
     cursor: default;
 }
-/* ++ ADDED SECTION END ++ */
 
 .play-button {
     padding: 10px 20px;
@@ -237,7 +244,7 @@ em {
 }
 
 
-/* ++ Dark Mode Toggle Switch Styles ++ */
+/* Dark Mode Toggle Switch Styles */
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
@@ -311,4 +318,3 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%; /* Make the knob round */
 }
-/* ++ End Dark Mode Toggle Styles ++ */
