@@ -7,8 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const frequencyValueSpan = document.getElementById('frequency-value');
     const textInput = document.getElementById('text-input');
     const playTextButton = document.getElementById('play-text-button');
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const morseOutput = document.getElementById('morse-output'); // ++ Get Translation Element
+    const morseOutput = document.getElementById('morse-output');
 
     // --- State Variables ---
     let audioContext;
@@ -35,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         '"': '.-..-.', '$': '...-..-', '@': '.--.-.'
     };
 
-    // ++ ADDED FUNCTION START ++
     /**
      * Translates a string of text into a visual Morse code representation.
      * @param {string} text The text to translate.
@@ -58,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .replace(/\s?\/\s?/g, ' / ') // Ensure consistent spacing around slashes
             .trim();
     }
-    // ++ ADDED FUNCTION END ++
 
     // --- Function to Update Timing Based on WPM ---
     function updateTimingParameters(wpm) {
@@ -172,48 +169,11 @@ document.addEventListener('DOMContentLoaded', () => {
         buttonContainer.appendChild(button);
     });
 
-    // --- Dark Mode Logic ---
-    function applyTheme(theme) {
-        if (theme === 'dark') {
-            document.body.classList.add('dark-mode');
-            darkModeToggle.checked = true;
-        } else {
-            document.body.classList.remove('dark-mode');
-            darkModeToggle.checked = false;
-        }
-    }
-
-    darkModeToggle.addEventListener('change', () => {
-        const selectedTheme = darkModeToggle.checked ? 'dark' : 'light';
-        applyTheme(selectedTheme);
-        localStorage.setItem('morseTheme', selectedTheme);
-    });
-
-    const savedTheme = localStorage.getItem('morseTheme');
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-    if (savedTheme) {
-        applyTheme(savedTheme);
-    } else if (prefersDarkScheme.matches) {
-        applyTheme('dark');
-    } else {
-        applyTheme('light');
-    }
-
-    prefersDarkScheme.addEventListener('change', (e) => {
-        if (!localStorage.getItem('morseTheme')) {
-            applyTheme(e.matches ? 'dark' : 'light');
-        }
-    });
-
     // --- Event Listeners ---
-
-    // ++ ADDED: Live translation on text input ++
     textInput.addEventListener('input', () => {
         morseOutput.value = translateToMorse(textInput.value);
     });
 
-    // Individual Character Button Clicks
     buttonContainer.addEventListener('click', (event) => {
         if (event.target.classList.contains('morse-button')) {
             if (isPlaying || !initAudioContext()) return;
@@ -223,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Play Text Button Click
     playTextButton.addEventListener('click', () => {
         if (isPlaying || !initAudioContext()) return;
         const textToPlay = textInput.value;
@@ -233,14 +192,14 @@ document.addEventListener('DOMContentLoaded', () => {
         playMorseForText(textToPlay);
     });
 
-    // Speed Slider
     speedSlider.addEventListener('input', (event) => {
         currentWpm = parseInt(event.target.value, 10);
         speedValueSpan.textContent = `${currentWpm} WPM`;
         updateTimingParameters(currentWpm);
     });
 
-    // Frequency Slider
+
+
     frequencySlider.addEventListener('input', (event) => {
         currentFrequency = parseInt(event.target.value, 10);
         frequencyValueSpan.textContent = `${currentFrequency} Hz`;
@@ -250,5 +209,5 @@ document.addEventListener('DOMContentLoaded', () => {
     speedValueSpan.textContent = `${currentWpm} WPM`;
     frequencyValueSpan.textContent = `${currentFrequency} Hz`;
     updateTimingParameters(currentWpm);
-    morseOutput.value = translateToMorse(textInput.value); // Initial translation on load
+    morseOutput.value = translateToMorse(textInput.value);
 });
