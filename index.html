@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f4f4">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
+    <title>Morse Code Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> <div class="header-container">
+    <h1>Morse Code Player</h1>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="dark-mode-toggle">
+            <input type="checkbox" id="dark-mode-toggle" />
+            <span class="slider round"></span>
+        </label>
+        <em>Dark Mode</em>
+    </div>
+</div>
+
+<p>Enter text below or click individual characters.</p>
+<p><em>Note: Audio requires user interaction. Click any button/Play once to enable sound.</em></p>
+
+<div class="settings-container">
+    <h2>Settings</h2>
+    <div class="setting">
+        <label for="speed-slider">Speed (WPM):</label>
+        <input type="range" id="speed-slider" min="5" max="40" value="15" step="1">
+        <span id="speed-value">15 WPM</span>
+    </div>
+    <div class="setting">
+        <label for="frequency-slider">Tone (Hz):</label>
+        <input type="range" id="frequency-slider" min="300" max="1000" value="600" step="10">
+        <span id="frequency-value">600 Hz</span>
+    </div>
+</div>
+
+<div class="text-input-container">
+    <h2>Play Text</h2>
+    <textarea id="text-input" rows="3" placeholder="Enter text here..."></textarea>
+    <button id="play-text-button" class="play-button">Play Text</button>
+</div>
+
+<div id="button-container" class="button-container">
+    <h2>Individual Characters</h2>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
