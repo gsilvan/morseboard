@@ -93,12 +93,13 @@ em {
 /* Settings Styles */
 .settings-container,
 .text-input-container,
+.translation-container, /* ++ ADDED ++ */
 .button-container {
     background-color: var(--container-bg-color);
     padding: 20px 25px;
     border-radius: 8px;
     box-shadow: var(--container-shadow);
-    max-width: 600px; /* Consistent max-width? */
+    max-width: 600px;
     margin: 30px auto;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -110,6 +111,7 @@ em {
 
 .settings-container h2,
 .text-input-container h2,
+.translation-container h2, /* ++ ADDED ++ */
 .button-container h2 {
     text-align: center;
     margin-top: 0;
@@ -133,7 +135,6 @@ em {
 .setting input[type="range"] {
     flex-grow: 1;
     cursor: pointer;
-    /* Optional: Style range track/thumb for dark mode if needed */
 }
 
 .setting span {
@@ -160,6 +161,26 @@ em {
     color: var(--input-text-color); /* Use variable */
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
+
+/* ++ ADDED SECTION START ++ */
+#morse-output {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-family: monospace; /* Monospace font is ideal for Morse code */
+    box-sizing: border-box;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--bg-color); /* Use main BG to look like a display panel */
+    color: var(--secondary-text-color);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    resize: none; /* Disable user resizing */
+    cursor: default;
+}
+/* ++ ADDED SECTION END ++ */
 
 .play-button {
     padding: 10px 20px;
