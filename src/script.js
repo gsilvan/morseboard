@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const textInput = document.getElementById('text-input');
     const playTextButton = document.getElementById('play-text-button');
     const morseOutput = document.getElementById('morse-output');
+    const ditButton = document.getElementById('dit-button');
+    const dahButton = document.getElementById('dah-button');
 
     // --- State Variables ---
     let audioContext;
@@ -198,11 +200,19 @@ document.addEventListener('DOMContentLoaded', () => {
         updateTimingParameters(currentWpm);
     });
 
-
-
     frequencySlider.addEventListener('input', (event) => {
         currentFrequency = parseInt(event.target.value, 10);
         frequencyValueSpan.textContent = `${currentFrequency} Hz`;
+    });
+
+    ditButton.addEventListener('click', () => {
+        if (!initAudioContext()) return;
+        playTone(audioContext.currentTime, dotDuration);
+    });
+
+    dahButton.addEventListener('click', () => {
+        if (!initAudioContext()) return;
+        playTone(audioContext.currentTime, dashDuration);
     });
 
     // --- Initial Setup ---

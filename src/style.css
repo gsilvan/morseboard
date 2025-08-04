@@ -95,6 +95,7 @@ em {
 .settings-container,
 .text-input-container,
 .translation-container,
+.manual-input-container,
 .button-container,
 .alphabet-list-container {
     background-color: var(--container-bg-color);
@@ -113,6 +114,7 @@ em {
 .settings-container h2,
 .text-input-container h2,
 .translation-container h2,
+.manual-input-container h2,
 .button-container h2,
 .alphabet-list-container h2 {
     text-align: center;
@@ -273,6 +275,35 @@ em {
     font-size: 1.2em;
     letter-spacing: 2px;
     align-self: center;
+}
+
+/* Manual Input Buttons */
+.manual-buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.manual-button {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 20px 0;
+    flex: 1;
+    cursor: pointer;
+    border: 1px solid var(--button-border-color);
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border-radius: 8px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.manual-button:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+.manual-button:active {
+    background-color: var(--button-active-bg-color);
+    transform: scale(0.98);
 }
 
 
